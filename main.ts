@@ -1,18 +1,14 @@
-input.onButtonPressed(Button.A, function () {
-    basic.showNumber(1)
-    basic.pause(1000)
-    basic.clearScreen()
-})
-input.onButtonPressed(Button.AB, function () {
-    basic.showNumber(3)
-    basic.pause(1000)
-    basic.clearScreen()
-})
-input.onButtonPressed(Button.B, function () {
-    basic.showNumber(2)
-    basic.pause(1000)
-    basic.clearScreen()
-})
 basic.forever(function () {
-	
+    if (input.compassHeading() > 315 || input.compassHeading() < 45) {
+        basic.showArrow(ArrowNames.South)
+    }
+    if (input.compassHeading() > 45 && input.compassHeading() < 135) {
+        basic.showArrow(ArrowNames.West)
+    }
+    if (input.compassHeading() > 135 && input.compassHeading() < 225) {
+        basic.showArrow(ArrowNames.North)
+    }
+    if (input.compassHeading() > 225 && input.compassHeading() < 315) {
+        basic.showArrow(ArrowNames.East)
+    }
 })
